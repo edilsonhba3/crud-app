@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nuevo</title>
+</head>
+<body>
+
+	<p>Nuevo</p>
+	
+	<form action="/update2" method="post" th:object="${obj}">
+		<label>dui</label>
+		<input name="dui" type="text" th:field="*{dui}" /><br>
+		<input name="id" type="hidden" th:field="*{id}"/>
+		
+		<label>nombre</label>
+		<input name="nombre" type="text" th:field="*{nombre}"/><br>
+		
+		<input type="submit"/><br>		
+	</form>
+
+</body>
+</html>

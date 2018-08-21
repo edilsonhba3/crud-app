@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Editar</title>
+</head>
+<body>
+
+	<p>Editar</p>
+	
+	<form action="/update" method="post" th:object="${obj}">
+		<label>dui</label>
+		<input name="dui" type="text" th:field="*{dui}" th:value="${dui}" /><br>
+		
+		<label>nombre</label>
+		<input name="nombre" type="text" th:field="*{nombre}" th:value="${nombre}"/><br>
+		<label>apellido</label>
+		<input name="apellido" type="text" th:field="*{apellido}" th:value="${apellido}"/><br>
+		
+		<label>telefono</label>
+		<input name="telefono" type="text" th:field="*{telefono}" th:value="${telefono}"/><br>
+		
+		<label>edad</label>
+		<input name="edad" type="text" th:field="*{edad}" th:value="${edad}"/><br>
+		
+		<input name="id" type="hidden" th:field="*{id}" th:value="${id}"/>
+		<input name="promedio" type="hidden" th:field="*{promedio}" th:value="${promedio}"/>
+		<input name="fecha" type="hidden" th:field="*{fecha}" th:value="${fecha}"/>
+		
+		<input type="submit"/><br>		
+	</form>
+
+</body>
+</html>

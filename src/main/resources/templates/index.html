@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>index</title>
+</head>
+<body>
+
+	<p>index</p>
+
+
+	<ul th:each="est : ${list}">
+		<li th:text="${est.dui} +'-'+ ${est.nombre}" ></li>
+	</ul>
+	
+	<table>
+		<thead>
+			<th>id</th>
+			<th>nombre</th>
+			<th>accion</th>
+		</thead>
+		<tbody>
+			<tr th:each="est : ${list}">
+				<td th:text="${est.id}" ></td>
+				<td th:text="${est.nombre}" ></td>
+				<td>
+					<a th:href="'/editar/'+ ${est.id}" >editar</a> - 
+					<a th:href="'/borrar/'+ ${est.id}" onclick="return confirm('borrar?')" >borrar</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<p>nuevo</p>
+	
+	<form action="/add" method="post" th:object="${obj}">
+		<label>dui</label>
+		<input name="dui" type="text" th:field="*{dui}"/><br>
+		
+		<label>nombre</label>
+		<input name="nombre" type="text" th:field="*{nombre}"/><br>
+		
+		<label>apellido</label>
+		<input name="apellido" type="text" th:field="*{apellido}"/><br>
+		
+		<label>telefono</label>
+		<input name="telefono" type="text" th:field="*{telefono}"/><br>
+		
+		<label>edad</label>
+		<input name="edad" type="text" th:field="*{edad}"/><br>
+		
+		<label>promedio</label>
+		<input name="promedio" type="text" th:field="*{promedio}"/><br>
+		
+		<input type="submit"/><br>
+		
+	</form>
+
+</body>
+</html>
